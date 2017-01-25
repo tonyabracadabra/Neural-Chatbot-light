@@ -7,3 +7,4 @@ import scrapy
 class SubtitleItem(scrapy.Item):
     url = scrapy.Field()
     file_name = scrapy.Field()
+    sub_type = scrapy.Field()
