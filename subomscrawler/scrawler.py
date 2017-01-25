@@ -14,7 +14,7 @@ import re
 class SubtitleSpider(BaseSpider):
     name = 'subom subtitle'
     allowed_domains = ['subom.net']
-    max_cid = 100
+    max_cid = 100000
 
     def start_requests(self):
         for i in range(1, self.max_cid):
@@ -38,5 +38,5 @@ class SubtitleSpider(BaseSpider):
         subtitle['sub_type'] = sub_type
 
         if (sub_type == "Subrip"):
-            urllib.urlretrieve(subtitle['url'], subtitle['subtitles'+'file_name'])
+            urllib.urlretrieve(subtitle['url'], 'subtitles/'+subtitle['file_name'])
             return subtitle
